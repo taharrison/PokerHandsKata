@@ -10,6 +10,7 @@ namespace PokerGame
     {
         Nothing = 0,
         Pair = 1,
+        TwoPair = 2,
     }
 
     public enum Suit

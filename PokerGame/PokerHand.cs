@@ -21,6 +21,10 @@ namespace PokerGame
 
 
             if (pairGroups
+                .Count() == 2)
+                return HandStrength.TwoPair;
+
+            if (pairGroups
                 .Count() == 1)
                 return HandStrength.Pair;
             

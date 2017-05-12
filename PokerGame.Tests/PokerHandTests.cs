@@ -51,6 +51,21 @@ namespace PokerGame.Tests
             Assert.AreEqual(HandStrength.Pair, handStrength);
         }
 
+        [Test]
+        public void CanIdentifyTwoPair()
+        {
+            var sut = new PokerHand();
+            sut.AddCard(new Card(Suit.Heart, Value.Two));
+            sut.AddCard(new Card(Suit.Club, Value.Two));
+            sut.AddCard(new Card(Suit.Spade, Value.Seven));
+            sut.AddCard(new Card(Suit.Diamond, Value.Seven));
+            sut.AddCard(new Card(Suit.Heart, Value.Ten));
+
+            var handStrength = sut.GetHandStrength();
+
+            Assert.AreEqual(HandStrength.TwoPair, handStrength);
+        }
+
         
     }
 
