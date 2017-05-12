@@ -8,5 +8,11 @@ namespace PokerGame
 {
     public class PokerHand
     {
+
+        public HandStrength GetHandStrength()
+        {
+            
+            return HandStrength.Nothing;
+        }
     }
 }

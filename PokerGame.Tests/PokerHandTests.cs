@@ -11,6 +11,16 @@ namespace PokerGame.Tests
     [TestFixture]
     class PokerHandTests
     {
+        [Test]
+        public void AHandOf0CardsIsWorthNothing()
+        {
+            var sut = new PokerHand();
+            
+            var handStrength = sut.GetHandStrength();
+
+            Assert.AreEqual(HandStrength.Nothing, handStrength);
+        }
+
         
     }
 

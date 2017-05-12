@@ -6,4 +6,8 @@ using System.Threading.Tasks;
 
 namespace PokerGame
 {
+    public enum HandStrength
+    {
+        Nothing = 0,
+    }
 }
