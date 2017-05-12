@@ -9,6 +9,7 @@ namespace PokerGame
     public enum HandStrength
     {
         Nothing = 0,
+        Pair = 1,
     }
 
     public enum Suit

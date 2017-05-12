@@ -8,15 +8,23 @@ namespace PokerGame
 {
     public class PokerHand
     {
+        List<Card> cards = new List<Card>();
 
         public HandStrength GetHandStrength()
         {
             
+
+            if (cards
+                .GroupBy(c => c.Value)
+                .Any(g => g.Count() > 1))
+                return HandStrength.Pair;
+
             return HandStrength.Nothing;
         }
 
         public void AddCard(Card card)
         {
+            cards.Add(card);
         }
     }
 
