@@ -12,13 +12,18 @@ namespace PokerGame
 
         public HandStrength GetHandStrength()
         {
-            
+            var cardGroups = cards
+                .GroupBy(c => c.Value);
 
-            if (cards
-                .GroupBy(c => c.Value)
-                .Any(g => g.Count() > 1))
+            var pairGroups = cardGroups
+                .Where(g => g.Count() == 2);
+
+
+
+            if (pairGroups
+                .Count() == 1)
                 return HandStrength.Pair;
-
+            
             return HandStrength.Nothing;
         }
 
