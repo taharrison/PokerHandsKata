@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -64,6 +64,21 @@ namespace PokerGame.Tests
             var handStrength = sut.GetHandStrength();
 
             Assert.AreEqual(HandStrength.TwoPair, handStrength);
+        }
+
+        [Test]
+        public void CanIdentifyThreeOfAKind()
+        {
+            var sut = new PokerHand();
+            sut.AddCard(new Card(Suit.Heart, Value.Two));
+            sut.AddCard(new Card(Suit.Club, Value.Two));
+            sut.AddCard(new Card(Suit.Spade, Value.Seven));
+            sut.AddCard(new Card(Suit.Diamond, Value.Eight));
+            sut.AddCard(new Card(Suit.Heart, Value.Two));
+
+            var handStrength = sut.GetHandStrength();
+
+            Assert.AreEqual(HandStrength.ThreeOfAKind, handStrength);
         }
 
         

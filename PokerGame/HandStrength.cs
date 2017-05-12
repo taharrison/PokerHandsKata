@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +11,7 @@ namespace PokerGame
         Nothing = 0,
         Pair = 1,
         TwoPair = 2,
+        ThreeOfAKind
     }
 
     public enum Suit

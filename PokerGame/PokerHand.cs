@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +18,12 @@ namespace PokerGame
             var pairGroups = cardGroups
                 .Where(g => g.Count() == 2);
 
+            var threesGroups = cardGroups
+                .Where(g => g.Count() == 3);
 
+            if (threesGroups
+                .Count() == 1)
+                return HandStrength.ThreeOfAKind;
 
             if (pairGroups
                 .Count() == 2)
