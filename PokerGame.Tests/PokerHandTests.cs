@@ -21,6 +21,20 @@ namespace PokerGame.Tests
             Assert.AreEqual(HandStrength.Nothing, handStrength);
         }
 
+        [Test]
+        public void AHandOf5UnrelatedCardsIsWorthNothing()
+        {
+            var sut = new PokerHand();
+            sut.AddCard(new Card(Suit.Heart, Value.Two));
+            sut.AddCard(new Card(Suit.Club, Value.Three));
+            sut.AddCard(new Card(Suit.Spade, Value.Seven));
+            sut.AddCard(new Card(Suit.Diamond, Value.Eight));
+            sut.AddCard(new Card(Suit.Heart, Value.Ten));
+       
+            var handStrength = sut.GetHandStrength();
+        
+            Assert.AreEqual(HandStrength.Nothing, handStrength);
+        }
         
     }
 

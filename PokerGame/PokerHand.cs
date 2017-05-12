@@ -14,5 +14,21 @@ namespace PokerGame
             
             return HandStrength.Nothing;
         }
+
+        public void AddCard(Card card)
+        {
+        }
+    }
+
+    public class Card
+    {
+        public Suit Suit { get; }
+        public Value Value { get; }
+
+        public Card(Suit suit, Value value)
+        {
+            Suit = suit;
+            Value = value;
+        }
     }
 }
